@@ -1,6 +1,7 @@
 using CodeeloUI.SupportClasses.Animation.Animator;
 using Org.BouncyCastle.Asn1.Crmf;
 using ProgressBarSample;
+using System;
 using System.Text.Json;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -17,7 +18,6 @@ namespace CalculatorOfCalorie
         private string fileFood = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\Food.json";
         private string fileFoodOut = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\FoodOut.json";
         private string filePerson = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\Person.json";
-
         public Form1()
         {
             InitializeComponent();
@@ -151,7 +151,6 @@ namespace CalculatorOfCalorie
                 person.Age = age;
                 person.Gender = gender;
                 person.CalculateDailyCalorieNeeds();
-                double DailyCalorieNeeds = person.DailyCalorieNeeds;
 
             }
             else
@@ -209,7 +208,7 @@ namespace CalculatorOfCalorie
             if (prod != null && !string.IsNullOrEmpty(textGram.Text))
             {
                 double gram = double.Parse(textGram.Text);
-                double calprod = (TakeCal(FoodList, prod) / 100) * gram;
+                double calprod = (gram / 100) * TakeCal(FoodList, prod);
                 FoodOut foodout = new FoodOut(prod, gram, calprod);
 
                 FoodListOut.Add(foodout);
@@ -249,17 +248,20 @@ namespace CalculatorOfCalorie
 
         private void codeeloButton1_Click(object sender, EventArgs e)
         {
+
             double calall = 0;
             foreach (FoodOut prod in FoodListOut)
             {
                 calall += prod.Cal;
+
             }
             UpdateProgressBar(calall);
+
         }
         private void UpdateProgressBar(double calall)
         {
 
-
+            person.CalculateDailyCalorieNeeds();
             double call = person.DailyCalorieNeeds;
 
 
@@ -302,6 +304,9 @@ namespace CalculatorOfCalorie
             }
         }
 
+        private void ProgressBar1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

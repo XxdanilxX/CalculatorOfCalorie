@@ -24,11 +24,11 @@ namespace CalculatorOfCalorie
         }
         public void CalculateDailyCalorieNeeds()
         {
-            if (Gender == "Мужской")
+            if (Gender == "Чоловік")
             {
                 DailyCalorieNeeds = (10 * Weight) + (6.25 * Height) - (5 * Age) + 5;
             }
-            else if (Gender == "Женский")
+            else if (Gender == "Жінка")
             {
                 DailyCalorieNeeds = (10 * Weight) + (6.25 * Height) - (5 * Age) - 161;
             }
