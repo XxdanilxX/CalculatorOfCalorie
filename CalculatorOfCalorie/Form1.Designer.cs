@@ -42,6 +42,7 @@
             textWeight = new TextBox();
             textAge = new TextBox();
             tabPage2 = new TabPage();
+            label10 = new Label();
             btnDelete = new CodeeloUI.Controls.CodeeloButton();
             btnAdd = new CodeeloUI.Controls.CodeeloButton();
             label6 = new Label();
@@ -62,7 +63,6 @@
             listBox2 = new ListBox();
             tabPage5 = new TabPage();
             listBox3 = new ListBox();
-            label10 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -282,6 +282,16 @@
             tabPage2.Size = new Size(839, 496);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Informations";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(371, 460);
+            label10.Name = "label10";
+            label10.Size = new Size(319, 20);
+            label10.TabIndex = 11;
+            label10.Text = "*Вводити назву продукту треба без відступів";
+            label10.Click += label10_Click;
             // 
             // btnDelete
             // 
@@ -600,7 +610,7 @@
             ProgressBar1.Name = "ProgressBar1";
             ProgressBar1.Size = new Size(162, 162);
             ProgressBar1.TabIndex = 6;
-            ProgressBar1.Text = "1%";
+            ProgressBar1.Text = "0%";
             ProgressBar1.UseWaitCursor = true;
             ProgressBar1.Value = 0;
             ProgressBar1.Click += ProgressBar1_Click;
@@ -665,16 +675,6 @@
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(361, 444);
             listBox3.TabIndex = 0;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(371, 460);
-            label10.Name = "label10";
-            label10.Size = new Size(319, 20);
-            label10.TabIndex = 11;
-            label10.Text = "*Вводити назву продукту треба без відступів";
-            label10.Click += label10_Click;
             // 
             // Form1
             // 
