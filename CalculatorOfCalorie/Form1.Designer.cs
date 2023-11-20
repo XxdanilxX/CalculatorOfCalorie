@@ -62,6 +62,7 @@
             listBox2 = new ListBox();
             tabPage5 = new TabPage();
             listBox3 = new ListBox();
+            label10 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -266,6 +267,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(0, 192, 192);
+            tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(btnDelete);
             tabPage2.Controls.Add(btnAdd);
             tabPage2.Controls.Add(label6);
@@ -598,9 +600,9 @@
             ProgressBar1.Name = "ProgressBar1";
             ProgressBar1.Size = new Size(162, 162);
             ProgressBar1.TabIndex = 6;
-            ProgressBar1.Text = "1%";
+            ProgressBar1.Text = "0%";
             ProgressBar1.UseWaitCursor = true;
-            ProgressBar1.Value = 1;
+            ProgressBar1.Value = 0;
             ProgressBar1.Click += ProgressBar1_Click;
             // 
             // textGram
@@ -664,6 +666,16 @@
             listBox3.Size = new Size(361, 444);
             listBox3.TabIndex = 0;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(371, 460);
+            label10.Name = "label10";
+            label10.Size = new Size(319, 20);
+            label10.TabIndex = 11;
+            label10.Text = "*Вводити назву продукту треба без відступів";
+            label10.Click += label10_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -724,5 +736,6 @@
         private CodeeloUI.Controls.CodeeloButton btnDel1;
         private CodeeloUI.Controls.CodeeloButton btnAdd1;
         private Label label9;
+        private Label label10;
     }
 }
