@@ -600,7 +600,7 @@
             ProgressBar1.Name = "ProgressBar1";
             ProgressBar1.Size = new Size(162, 162);
             ProgressBar1.TabIndex = 6;
-            ProgressBar1.Text = "0%";
+            ProgressBar1.Text = "1%";
             ProgressBar1.UseWaitCursor = true;
             ProgressBar1.Value = 0;
             ProgressBar1.Click += ProgressBar1_Click;
