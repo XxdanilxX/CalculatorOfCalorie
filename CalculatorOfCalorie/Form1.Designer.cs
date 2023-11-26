@@ -52,6 +52,8 @@
             textCal = new TextBox();
             textName = new TextBox();
             tabPage3 = new TabPage();
+            textProgressBar1 = new ProgressBarSample.TextProgressBar();
+            btnSaveDay = new CodeeloUI.Controls.CodeeloButton();
             label9 = new Label();
             btnDel1 = new CodeeloUI.Controls.CodeeloButton();
             btnAdd1 = new CodeeloUI.Controls.CodeeloButton();
@@ -63,6 +65,11 @@
             listBox2 = new ListBox();
             tabPage5 = new TabPage();
             listBox3 = new ListBox();
+            tabPageChart = new TabPage();
+            label11 = new Label();
+            codeeloButton4 = new CodeeloUI.Controls.CodeeloButton();
+            listBox4 = new ListBox();
+            chartControl1 = new Syncfusion.Windows.Forms.Chart.ChartControl();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -70,6 +77,7 @@
             tabControl2.SuspendLayout();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
+            tabPageChart.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -77,6 +85,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPageChart);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tabControl1.HotTrack = true;
@@ -285,13 +294,14 @@
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
+            label10.ForeColor = SystemColors.ControlLightLight;
             label10.Location = new Point(371, 460);
             label10.Name = "label10";
             label10.Size = new Size(319, 20);
             label10.TabIndex = 11;
             label10.Text = "*Вводити назву продукту треба без відступів";
-            label10.Click += label10_Click;
             // 
             // btnDelete
             // 
@@ -441,6 +451,8 @@
             // tabPage3
             // 
             tabPage3.BackColor = Color.FromArgb(0, 192, 192);
+            tabPage3.Controls.Add(textProgressBar1);
+            tabPage3.Controls.Add(btnSaveDay);
             tabPage3.Controls.Add(label9);
             tabPage3.Controls.Add(btnDel1);
             tabPage3.Controls.Add(btnAdd1);
@@ -454,6 +466,63 @@
             tabPage3.Size = new Size(839, 496);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Calculator";
+            // 
+            // textProgressBar1
+            // 
+            textProgressBar1.AccessibleRole = AccessibleRole.Cursor;
+            textProgressBar1.Anchor = AnchorStyles.None;
+            textProgressBar1.CustomText = "";
+            textProgressBar1.ForeColor = Color.FromArgb(0, 192, 192);
+            textProgressBar1.Location = new Point(558, 253);
+            textProgressBar1.Name = "textProgressBar1";
+            textProgressBar1.ProgressColor = Color.LightGreen;
+            textProgressBar1.Size = new Size(107, 24);
+            textProgressBar1.Style = ProgressBarStyle.Marquee;
+            textProgressBar1.TabIndex = 12;
+            textProgressBar1.TextColor = Color.Black;
+            textProgressBar1.TextFont = new Font("Times New Roman", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textProgressBar1.VisualMode = ProgressBarSample.ProgressBarDisplayMode.CurrProgress;
+            // 
+            // btnSaveDay
+            // 
+            btnSaveDay.AccessibleRole = null;
+            btnSaveDay.Anchor = AnchorStyles.None;
+            btnSaveDay.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnSaveDay.BackColor = Color.Transparent;
+            btnSaveDay.BorderColor_1 = Color.Transparent;
+            btnSaveDay.BorderColor_2 = Color.Transparent;
+            btnSaveDay.BorderRadius = 20;
+            btnSaveDay.BorderSize = 3;
+            btnSaveDay.CausesValidation = false;
+            btnSaveDay.ColorFill_1 = Color.Crimson;
+            btnSaveDay.ColorFill_2 = Color.Crimson;
+            btnSaveDay.DialogResult = false;
+            btnSaveDay.FlatAppearance.BorderSize = 0;
+            btnSaveDay.FlatStyle = FlatStyle.Flat;
+            btnSaveDay.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSaveDay.ForeColor = Color.WhiteSmoke;
+            btnSaveDay.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            btnSaveDay.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            btnSaveDay.Location = new Point(657, 446);
+            btnSaveDay.Name = "btnSaveDay";
+            btnSaveDay.OnClick_BorderColor_1 = Color.Transparent;
+            btnSaveDay.OnClick_BorderColor_2 = Color.Transparent;
+            btnSaveDay.OnClick_FillColor_1 = Color.FromArgb(179, 184, 216);
+            btnSaveDay.OnClick_FillColor_2 = Color.FromArgb(199, 225, 229);
+            btnSaveDay.OnOver_BorderColor_1 = Color.Transparent;
+            btnSaveDay.OnOver_BorderColor_2 = Color.Transparent;
+            btnSaveDay.OnOver_FillColor_1 = Color.FromArgb(159, 164, 196);
+            btnSaveDay.OnOver_FillColor_2 = Color.FromArgb(179, 205, 209);
+            btnSaveDay.Size = new Size(179, 44);
+            btnSaveDay.TabIndex = 11;
+            btnSaveDay.TabStop = false;
+            btnSaveDay.Text = "Завершити день";
+            btnSaveDay.TextAlign = CodeeloUI.Enums.TextPosition.Center;
+            btnSaveDay.UseGradient = true;
+            btnSaveDay.UseGradientBorder = true;
+            btnSaveDay.UseMnemonic = false;
+            btnSaveDay.UseVisualStyleBackColor = false;
+            btnSaveDay.Click += btnSaveDay_Click;
             // 
             // label9
             // 
@@ -568,7 +637,7 @@
             codeeloButton1.ForeColor = Color.WhiteSmoke;
             codeeloButton1.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             codeeloButton1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            codeeloButton1.Location = new Point(489, 409);
+            codeeloButton1.Location = new Point(488, 350);
             codeeloButton1.Name = "codeeloButton1";
             codeeloButton1.OnClick_BorderColor_1 = Color.Transparent;
             codeeloButton1.OnClick_BorderColor_2 = Color.Transparent;
@@ -602,9 +671,10 @@
             ProgressBar1.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
             ProgressBar1.ForeColor = SystemColors.ControlLightLight;
             ProgressBar1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            ProgressBar1.ImeMode = ImeMode.NoControl;
             ProgressBar1.LineColor = Color.Gray;
             ProgressBar1.LineWidth = 10;
-            ProgressBar1.Location = new Point(531, 241);
+            ProgressBar1.Location = new Point(530, 182);
             ProgressBar1.MaxValue = 100;
             ProgressBar1.MinimumSize = new Size(100, 100);
             ProgressBar1.Name = "ProgressBar1";
@@ -613,7 +683,6 @@
             ProgressBar1.Text = "0%";
             ProgressBar1.UseWaitCursor = true;
             ProgressBar1.Value = 0;
-            ProgressBar1.Click += ProgressBar1_Click;
             // 
             // textGram
             // 
@@ -676,6 +745,114 @@
             listBox3.Size = new Size(361, 444);
             listBox3.TabIndex = 0;
             // 
+            // tabPageChart
+            // 
+            tabPageChart.BackColor = Color.FromArgb(0, 192, 192);
+            tabPageChart.Controls.Add(label11);
+            tabPageChart.Controls.Add(codeeloButton4);
+            tabPageChart.Controls.Add(listBox4);
+            tabPageChart.Controls.Add(chartControl1);
+            tabPageChart.Location = new Point(4, 29);
+            tabPageChart.Name = "tabPageChart";
+            tabPageChart.Padding = new Padding(3);
+            tabPageChart.Size = new Size(839, 496);
+            tabPageChart.TabIndex = 3;
+            tabPageChart.Text = "Statistic";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.ForeColor = SystemColors.ControlLightLight;
+            label11.Location = new Point(21, 241);
+            label11.Name = "label11";
+            label11.Size = new Size(139, 20);
+            label11.TabIndex = 11;
+            label11.Text = "Збережені калорії:";
+            // 
+            // codeeloButton4
+            // 
+            codeeloButton4.AccessibleRole = null;
+            codeeloButton4.Anchor = AnchorStyles.None;
+            codeeloButton4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            codeeloButton4.BackColor = Color.Transparent;
+            codeeloButton4.BorderColor_1 = Color.Transparent;
+            codeeloButton4.BorderColor_2 = Color.Transparent;
+            codeeloButton4.BorderRadius = 20;
+            codeeloButton4.BorderSize = 3;
+            codeeloButton4.CausesValidation = false;
+            codeeloButton4.ColorFill_1 = Color.Red;
+            codeeloButton4.ColorFill_2 = Color.Fuchsia;
+            codeeloButton4.DialogResult = false;
+            codeeloButton4.FlatAppearance.BorderSize = 0;
+            codeeloButton4.FlatStyle = FlatStyle.Flat;
+            codeeloButton4.Font = new Font("Times New Roman", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            codeeloButton4.ForeColor = Color.WhiteSmoke;
+            codeeloButton4.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            codeeloButton4.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            codeeloButton4.Location = new Point(525, 312);
+            codeeloButton4.Name = "codeeloButton4";
+            codeeloButton4.OnClick_BorderColor_1 = Color.Transparent;
+            codeeloButton4.OnClick_BorderColor_2 = Color.Transparent;
+            codeeloButton4.OnClick_FillColor_1 = Color.FromArgb(179, 184, 216);
+            codeeloButton4.OnClick_FillColor_2 = Color.FromArgb(199, 225, 229);
+            codeeloButton4.OnOver_BorderColor_1 = Color.Transparent;
+            codeeloButton4.OnOver_BorderColor_2 = Color.Transparent;
+            codeeloButton4.OnOver_FillColor_1 = Color.FromArgb(159, 164, 196);
+            codeeloButton4.OnOver_FillColor_2 = Color.FromArgb(179, 205, 209);
+            codeeloButton4.Size = new Size(262, 103);
+            codeeloButton4.TabIndex = 10;
+            codeeloButton4.TabStop = false;
+            codeeloButton4.Text = "Видалити";
+            codeeloButton4.TextAlign = CodeeloUI.Enums.TextPosition.Center;
+            codeeloButton4.UseGradient = true;
+            codeeloButton4.UseGradientBorder = true;
+            codeeloButton4.UseMnemonic = false;
+            codeeloButton4.UseVisualStyleBackColor = false;
+            codeeloButton4.Click += codeeloButton4_Click;
+            // 
+            // listBox4
+            // 
+            listBox4.Anchor = AnchorStyles.None;
+            listBox4.BackColor = Color.Gainsboro;
+            listBox4.FormattingEnabled = true;
+            listBox4.ItemHeight = 20;
+            listBox4.Location = new Point(21, 264);
+            listBox4.Name = "listBox4";
+            listBox4.Size = new Size(436, 224);
+            listBox4.TabIndex = 1;
+            // 
+            // chartControl1
+            // 
+            chartControl1.Anchor = AnchorStyles.None;
+            chartControl1.AutoHighlight = true;
+            chartControl1.ChartArea.CursorLocation = new Point(0, 0);
+            chartControl1.ChartArea.CursorReDraw = false;
+            chartControl1.ColumnFixedWidth = 5;
+            chartControl1.IsWindowLess = false;
+            // 
+            // 
+            // 
+            chartControl1.Legend.Location = new Point(712, 31);
+            chartControl1.Localize = null;
+            chartControl1.Location = new Point(6, 3);
+            chartControl1.Name = "chartControl1";
+            chartControl1.PrimaryXAxis.ForeColor = SystemColors.ControlLightLight;
+            chartControl1.PrimaryXAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
+            chartControl1.PrimaryXAxis.Margin = true;
+            chartControl1.PrimaryYAxis.ForeColor = SystemColors.Window;
+            chartControl1.PrimaryYAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
+            chartControl1.PrimaryYAxis.Margin = true;
+            chartControl1.PrimaryYAxis.TickColor = SystemColors.Control;
+            chartControl1.PrimaryYAxis.TitleColor = SystemColors.ControlLightLight;
+            chartControl1.Size = new Size(833, 266);
+            chartControl1.TabIndex = 0;
+            // 
+            // 
+            // 
+            chartControl1.Title.Name = "Default";
+            chartControl1.VisualTheme = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -697,6 +874,8 @@
             tabControl2.ResumeLayout(false);
             tabPage4.ResumeLayout(false);
             tabPage5.ResumeLayout(false);
+            tabPageChart.ResumeLayout(false);
+            tabPageChart.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -737,5 +916,12 @@
         private CodeeloUI.Controls.CodeeloButton btnAdd1;
         private Label label9;
         private Label label10;
+        private CodeeloUI.Controls.CodeeloButton btnSaveDay;
+        private TabPage tabPageChart;
+        private Syncfusion.Windows.Forms.Chart.ChartControl chartControl1;
+        private ListBox listBox4;
+        private CodeeloUI.Controls.CodeeloButton codeeloButton4;
+        private ProgressBarSample.TextProgressBar textProgressBar1;
+        private Label label11;
     }
 }
