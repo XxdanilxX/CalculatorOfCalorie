@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label12 = new Label();
             codeeloButton2 = new CodeeloUI.Controls.CodeeloButton();
             label8 = new Label();
             label7 = new Label();
@@ -99,6 +100,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(0, 192, 192);
+            tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(codeeloButton2);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
@@ -116,6 +118,18 @@
             tabPage1.Size = new Size(839, 496);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Body Settings";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.ForeColor = SystemColors.Window;
+            label12.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
+            label12.Location = new Point(796, 476);
+            label12.Name = "label12";
+            label12.Size = new Size(17, 20);
+            label12.TabIndex = 14;
+            label12.Text = "0";
             // 
             // codeeloButton2
             // 
@@ -473,7 +487,7 @@
             textProgressBar1.Anchor = AnchorStyles.None;
             textProgressBar1.CustomText = "";
             textProgressBar1.ForeColor = Color.FromArgb(0, 192, 192);
-            textProgressBar1.Location = new Point(558, 253);
+            textProgressBar1.Location = new Point(558, 251);
             textProgressBar1.Name = "textProgressBar1";
             textProgressBar1.ProgressColor = Color.LightGreen;
             textProgressBar1.Size = new Size(107, 24);
@@ -923,5 +937,6 @@
         private CodeeloUI.Controls.CodeeloButton codeeloButton4;
         private ProgressBarSample.TextProgressBar textProgressBar1;
         private Label label11;
+        private Label label12;
     }
 }

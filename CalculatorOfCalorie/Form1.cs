@@ -18,12 +18,11 @@ namespace CalculatorOfCalorie
         private List<Food> FoodList;
         private List<FoodOut> FoodListOut;
         private List<double> DayCaloriesList = new List<double>();
-
+        public string version = "1.3.1";
         private string fileFood = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\Food.json";
         private string fileFoodOut = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\FoodOut.json";
         private string filePerson = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\Person.json";
         private string fileDayCalories = "C:\\Users\\Lenovo\\source\\repos\\CalculatorOfCalorie\\CalculatorOfCalorie\\DayCalories.json";
-
         public Form1()
         {
             InitializeComponent();
@@ -124,6 +123,7 @@ namespace CalculatorOfCalorie
         }
         private void UpdateDayCaloriesList()
         {
+            label12.Text = version;
             listBox4.Items.Clear();
             foreach (double DayCalories in DayCaloriesList)
             {
@@ -285,8 +285,10 @@ namespace CalculatorOfCalorie
         {
             try
             {
-                person.CalculateDailyCalorieNeeds();
                 double call = person.DailyCalorieNeeds;
+                int progres = (int)((double)calall / call * 100);
+                ProgressBar1.Value = progres;
+                person.CalculateDailyCalorieNeeds();
                 textProgressBar1.Maximum = Convert.ToInt32(call);
                 textProgressBar1.Value = Convert.ToInt32(calall);
             }
@@ -423,5 +425,7 @@ namespace CalculatorOfCalorie
                 MessageBox.Show("Виберіть точку для виделення.");
             }
         }
+
+
     }
 }
